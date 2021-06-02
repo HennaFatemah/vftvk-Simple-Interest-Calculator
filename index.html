@@ -1,16 +1,56 @@
+<!-- Added the doctype. -->
+<!DOCTYPE html>
 <html>
     <head>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <!-- Added "Simple Interest Calculator" as title. -->
+    <title>Simple Interest Calculator</title>
     </head>
     <body>
-        <h1>Simple Interest Calculator</h1>
+        <!-- Moved all the content from <body> to a <div> tag. -->
+            <!-- Set the class attribute of this div to 'maindiv'. -->
+        <div class="maindiv">
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
-
-        <button onclick="compute()">Compute</button>
+            <h1>Simple Interest Calculator</h1>
+    
+            Amount <input type="number" id="principal">  <br/>
+            <!-- Modified the input text box for interest rate to a slider using the <input type="range"> tag. -->
+            <!-- For the rate input, set the attributes min to 1, max to 20 and step to 0.25 and the default value to 10.25. -->
+            Rate <input 
+                    onchange="updateRate()" 
+                    type="range"  
+                    id="rate" 
+                    min="1" 
+                    max="20"  
+                    step="0.25" 
+                    value="10.25"
+                >
+            <!-- To show the value selected by the range, created a <span> element right after the range. -->
+                <!-- Inside the '` tag added the text "10.25 %". -->
+            <span id="rate_val">10.25%</span>  <br/>
+            <!-- Modified the input text box for "No of years" into a dropdown box with options 1 to 10. -->
+            No. of Years <select id="years">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>  <br/>
+            Interest : <span id="result"></span><br>
+            <!-- Changed the name of "Compute" button to "Compute Interest". -->
+            <button onclick="compute()">Compute Interest</button>
+            <!-- Below the "Compute Interest" button created an empty <span> and set its id to 'result'. -->
+            <span id="result"></span>
+        </div>
+        <!-- Added a copyright message using the <footer> tag. -->
+        <footer>
+            &#169; This Calculator belongs to Henna Fatemah
+        </footer>
     </body>
 </html>
