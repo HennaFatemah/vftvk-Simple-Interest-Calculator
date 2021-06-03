@@ -25,4 +25,20 @@ function compute()
     document.getElementById("result").innerHTML=`If you deposit <mark>${principal}</mark>,\<br\>at an interest rate of <mark>${rate}</mark>%\<br\>You will receive an amount of <mark>${interest}</mark>,\<br\>in the year <mark>${year}</mark>\<br\>`
     
 }
+
+function setGradient() {
+    var css = document.querySelector("h3");
+    var color1 = document.querySelector(".color1");
+    var color2 = document.querySelector(".color2");
+    var body = document.getElementById("gradient");
+
+	body.style.background = 
+	`linear-gradient(to right, ${color1.value}, ${color2.value})`;
+
+	css.textContent = body.style.background + ";";
+}
+
+color1.addEventListener("input", setGradient);
+
+color2.addEventListener("input", setGradient);
         
